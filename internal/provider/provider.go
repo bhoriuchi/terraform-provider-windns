@@ -76,7 +76,7 @@ func New() *schema.Provider {
 		},
 
 		ResourcesMap: map[string]*schema.Resource{
-			"dns_a_record_set": resourceDnsARecordSet(),
+			"windns_a_record_set": resourceDnsARecordSet(),
 		},
 
 		ConfigureFunc: configureProvider,

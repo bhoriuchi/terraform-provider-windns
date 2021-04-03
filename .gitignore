@@ -11,6 +11,15 @@
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
+# Dev files
+*.tf
+*.tfvars
+*.lock.hcl
+*.log
+/bin
+dev.env
+dev.tfrc
+
 temp/
 .DS_Store
 .vscode
