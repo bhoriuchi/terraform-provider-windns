@@ -51,11 +51,13 @@ func New() *schema.Provider {
 				Optional:    true,
 				Description: "Port to connect over. Defaults to 5985 when secure_transport is false and 5986 when true.",
 			},
-			"kdc_server": {
-				Type:        schema.TypeList,
-				MinItems:    1,
-				Optional:    true,
-				Elem:        schema.TypeString,
+			"kdc_servers": {
+				Type:     schema.TypeList,
+				MinItems: 1,
+				Optional: true,
+				Elem: &schema.Schema{
+					Type: schema.TypeString,
+				},
 				Description: "List of KDCs. Will assume the dns_server is a KDC if omitted.",
 			},
 			"krb5_conf": {
@@ -66,7 +68,7 @@ func New() *schema.Provider {
 			"timeout_seconds": {
 				Type:        schema.TypeInt,
 				Optional:    true,
-				Description: "Time in seconds before the operation should timeout.",
+				Description: "Time in seconds before the operation should timeout. Defaults to 60 seconds",
 			},
 		},
 	}
